@@ -18,6 +18,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
+The Leaflet map lives in `app/map.js` and is dynamically loaded by `app/page.js` with server-side rendering disabled. Keep Leaflet imports in the map component because Leaflet requires browser APIs such as `window`. The map also imports Leaflet's stylesheet and sets an explicit container height.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
