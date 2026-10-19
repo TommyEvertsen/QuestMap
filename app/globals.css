@@ -3,11 +3,25 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --forestGreen: #1f6f50;
+  --mapNavy: #213547;
+  --treasureGold: #e7b93e;
+  --parchment: #f5ebd3;
+  --mountainGrey: #708090;
+  --questSuccess: #4caf50;
+  --danger: #d9534f;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-forest-green: var(--forestGreen);
+  --color-map-navy: var(--mapNavy);
+  --color-treasure-gold: var(--treasureGold);
+  --color-parchment: var(--parchment);
+  --color-mountain-grey: var(--mountainGrey);
+  --color-quest-success: var(--questSuccess);
+  --color-danger: var(--danger);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
