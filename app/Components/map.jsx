@@ -1,7 +1,7 @@
 "use client";
 
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-
+import { MapContainer, TileLayer } from "react-leaflet";
+import PopUpMarker from "../utils/PopUpMarker";
 import "leaflet/dist/leaflet.css";
 
 export default function Map() {
@@ -9,17 +9,14 @@ export default function Map() {
     <MapContainer
       center={[51.505, -0.09]}
       zoom={13}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
       style={{ height: "500px", width: "100%" }}
     >
       <TileLayer
         attribution="&copy; OpenStreetMap contributors"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-
-      <Marker position={[51.505, -0.09]}>
-        <Popup>A pretty CSS3 popup.</Popup>
-      </Marker>
+      <PopUpMarker />
     </MapContainer>
   );
 }
