@@ -8,8 +8,8 @@ const Map = dynamic(() => import("./Components/map"), {
 
 export default function Page() {
   return (
-    <div className="mapContainer h-full w-full bg-red">
-      <Map />;
-    </div>
+    <main className="min-h-0 w-full flex-1">
+      <Map />
+    </main>
   );
 }
