@@ -2,7 +2,7 @@
 
 import { MapContainer, TileLayer, LayersControl } from "react-leaflet";
 import LocateMeButton from "./locateMeButton";
-import PopUpMarker from "../utils/popUpMarker";
+import PopUpMarker from "./PopUpMarker";
 import "leaflet/dist/leaflet.css";
 
 export default function Map() {
@@ -19,6 +19,7 @@ export default function Map() {
       />
       <LocateMeButton />
       <PopUpMarker />
+     
     </MapContainer>
   );
 }
