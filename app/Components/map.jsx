@@ -1,8 +1,8 @@
 "use client";
 
 import { MapContainer, TileLayer, LayersControl } from "react-leaflet";
-import LocateMeButton from "./locateMeButton";
 import PopUpMarker from "./PopUpMarker";
+import LocateMeControl from "../leafletControls/LocateMeControl";
 import "leaflet/dist/leaflet.css";
 
 export default function Map() {
@@ -17,9 +17,8 @@ export default function Map() {
         attribution="&copy; OpenStreetMap contributors"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <LocateMeButton />
       <PopUpMarker />
-     
+      <LocateMeControl />
     </MapContainer>
   );
 }
