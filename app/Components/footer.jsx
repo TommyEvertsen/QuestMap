@@ -4,8 +4,9 @@ import MarkerMenu from "./markerMenu";
 
 export default function Footer() {
   return (
-    <footer className=" w-full bg-gray-200 p-4 text-center">
+    <footer className="flex justify-center items-center w-full bg-forest-green p-4 text-center h-16 ">
       <MarkerMenu />
+    
     </footer>
   );
 }
