@@ -15,6 +15,7 @@ export default function LocateMeControl() {
         btn.style.fontSize = "20px";
         btn.style.padding = "4px 8px";
         btn.style.cursor = "pointer";
+        btn.style.backgroundColor = "white";
 
         L.DomEvent.on(btn, "click", function (e) {
           L.DomEvent.stopPropagation(e);
