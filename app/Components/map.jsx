@@ -1,6 +1,7 @@
 "use client";
 
 import { MapContainer, TileLayer, LayersControl } from "react-leaflet";
+import MarkerControl from "../leafletControls/MarkerControl";
 import PopUpMarker from "./PopUpMarker";
 import LocateMeControl from "../leafletControls/LocateMeControl";
 import "leaflet/dist/leaflet.css";
@@ -19,6 +20,7 @@ export default function Map() {
       />
       <PopUpMarker />
       <LocateMeControl />
+      <MarkerControl />
     </MapContainer>
   );
 }
