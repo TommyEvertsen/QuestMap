@@ -1,38 +1,38 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import { DomEvent } from "leaflet";
 import { useMap } from "react-leaflet";
-import L from "leaflet";
-import { useEffect } from "react";
 
 export default function LocateMeControl() {
   const map = useMap();
+  const controlRef = useRef(null);
 
   useEffect(() => {
-    const LocateControl = L.Control.extend({
-      onAdd: function () {
-        const btn = L.DomUtil.create("button", "leaflet-bar leaflet-control");
-        btn.innerHTML = "📍";
-        btn.style.fontSize = "20px";
-        btn.style.padding = "4px 8px";
-        btn.style.cursor = "pointer";
-        btn.style.backgroundColor = "white";
+    const control = controlRef.current;
+    if (!control) return;
 
-        L.DomEvent.on(btn, "click", function (e) {
-          L.DomEvent.stopPropagation(e);
-          map.locate({ setView: true, maxZoom: 16 });
-        });
+    DomEvent.disableClickPropagation(control);
+    DomEvent.disableScrollPropagation(control);
+  }, []);
 
-        return btn;
-      },
+  const handleLocate = () => {
+    map.locate({
+      setView: true,
+      maxZoom: 16,
     });
+  };
 
-    const control = new LocateControl({ position: "topright" });
-    control.addTo(map);
-
-    return () => {
-      map.removeControl(control);
-    };
-  }, [map]);
-
-  return null;
+  return (
+    <button
+      ref={controlRef}
+      type="button"
+      onClick={handleLocate}
+      className="absolute right-4 top-4 z-[1000] rounded bg-white px-3 py-2 text-xl shadow hover:bg-gray-100"
+      aria-label="Locate me"
+      title="Locate me"
+    >
+      📍
+    </button>
+  );
 }

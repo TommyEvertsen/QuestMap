@@ -8,7 +8,6 @@ const LocateMeButton = () => {
     },
   });
 
-  /* Go to my location as the app starts */
   useEffect(() => {
     map.locate();
   }, [map]);
