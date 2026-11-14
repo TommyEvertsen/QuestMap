@@ -10,10 +10,10 @@ export default function LocateMeControl() {
 
   useEffect(() => {
     const control = controlRef.current;
-    if (!control) return;
-
-    DomEvent.disableClickPropagation(control);
-    DomEvent.disableScrollPropagation(control);
+    if (control) {
+      DomEvent.disableClickPropagation(control);
+      DomEvent.disableScrollPropagation(control);
+    }
   }, []);
 
   const handleLocate = () => {
@@ -28,7 +28,7 @@ export default function LocateMeControl() {
       ref={controlRef}
       type="button"
       onClick={handleLocate}
-      className="absolute right-4 top-4 z-[1000] rounded bg-white px-3 py-2 text-xl shadow hover:bg-gray-100"
+      className="absolute right-4 top-4 z-[1000] rounded bg-white px-3 py-2 text-xl shadow hover:bg-gray-100 cursor-pointer"
       aria-label="Locate me"
       title="Locate me"
     >
