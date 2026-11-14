@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, LayersControl } from "react-leaflet";
 import MarkerControl from "../leafletControls/MarkerControl";
 import PopUpMarker from "./PopUpMarker";
 import LocateMeControl from "../leafletControls/LocateMeControl";
+import StartCurrentLocation from "../../lib/StartCurrentLocation";
 import "leaflet/dist/leaflet.css";
 
 export default function Map() {
@@ -19,6 +20,7 @@ export default function Map() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <PopUpMarker />
+      <StartCurrentLocation />
       <LocateMeControl />
       <MarkerControl />
     </MapContainer>

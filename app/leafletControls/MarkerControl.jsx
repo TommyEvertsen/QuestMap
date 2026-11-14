@@ -16,21 +16,18 @@ export default function MarkerControl() {
   }, []);
 
   return (
-    <div
-      ref={controlRef}
-      className="absolute bottom-4 left-4 z-[1000]"
-    >
+    <div ref={controlRef} className="absolute bottom-4 left-4 z-[1000]">
       <button
         type="button"
         onClick={() => setMenuOpen((open) => !open)}
         aria-expanded={menuOpen}
-        className="rounded bg-white px-3 py-2 text-xl shadow"
+        className="rounded bg-white px-3 py-2 text-xl shadow cursor-pointer hover:bg-gray-100"
       >
         Markers
       </button>
 
       {menuOpen && (
-        <div className="mt-2 w-[200px] max-w-[calc(100vw-40px)] rounded border bg-white p-3 text-black shadow">
+        <div className="mt-2 w-[200px] max-w-[calc(100vw-40px)] rounded border bg-white p-3 text-black shadow cursor-pointer">
           Marker Menu
         </div>
       )}
